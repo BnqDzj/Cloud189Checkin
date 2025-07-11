@@ -32,7 +32,7 @@ jobs:
       
       - name: 📹 Restore cached Cookie
         id: cache-cookie-restore
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@main
         with:
           path: .token
           key: ${{ runner.os }}-cache-token
@@ -57,7 +57,7 @@ jobs:
           command: npm start
       
       - name: 📹 Save cached Cookie
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@main
         with:
           path: .token
           key: ${{ runner.os }}-cache-token-${{ hashFiles('.token/*.json') }}
